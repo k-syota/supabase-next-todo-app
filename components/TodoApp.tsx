@@ -20,6 +20,8 @@ const TodoApp = () => {
         e.preventDefault();
         if (title === "") return
         await addTodo(title);
+        const newTodos = await getAllTodos();
+        setTodos(newTodos);
         setTitle("");
     }
 
@@ -27,7 +29,7 @@ const TodoApp = () => {
         <section className='text-center mb-2 text-2xl font-medium'>
             <h3>Supabase Todo App</h3>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <input type="text" className='mr-4 shadow-lg p-1 outline-none' onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" className='mr-4 shadow-lg p-1 outline-none' onChange={(e) => setTitle(e.target.value)} value={title} />
                 <button className='shadow-md cursor-pointer px-1 py-1 border-2 bg-blue-200 rounded-2xl'>Add</button>
             </form>
             <TodoList todos={todos} />
