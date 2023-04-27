@@ -18,6 +18,7 @@ const TodoApp = () => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
+        if (title === "") return
         await addTodo(title);
         setTitle("");
     }
