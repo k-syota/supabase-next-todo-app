@@ -22,7 +22,7 @@ const TodoApp = () => {
                 <input type="text" className='mr-4 shadow-lg p-1 outline-none' />
                 <button className='shadow-md cursor-pointer px-1 py-1 border-2 bg-blue-200 rounded-2xl'>Add</button>
             </form>
-            <TodoList />
+            <TodoList todos={todos} />
         </section>
     )
 }
